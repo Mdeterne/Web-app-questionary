@@ -47,6 +47,7 @@ body { font-family: 'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Arial,
   letter-spacing: 1px;
   color: #fff;
   text-shadow: 0 8px 24px rgba(0,0,0,.25);
+  margin-top: 100px;
 }
 .logo span { display:inline-block; transform: translateY(-0.06em); }
 
