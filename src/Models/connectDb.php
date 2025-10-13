@@ -6,7 +6,7 @@ try
     // (host, dbname, user, password)
     // Le nom de votre base de données doit correspondre à celui que vous avez créé dans phpMyAdmin.
     $host = "localhost";
-    $dbname = "lacosina";
+    $dbname = "form";
     $user = "root";
     $password = "";
     // Création de la connexion PDO
