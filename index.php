@@ -1,6 +1,8 @@
 <?php
 
 require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controllers".DIRECTORY_SEPARATOR."homeController.php";
+require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controllers".DIRECTORY_SEPARATOR."connexionController.php";
+require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controllers".DIRECTORY_SEPARATOR."creerUnCompteController.php";
 
 $controller = isset($_GET['c'])? $_GET['c'] : 'home';
 $action = isset($_GET['a'])? $_GET['a'] : 'index';
@@ -39,5 +41,12 @@ switch ($controller){
       break;
     }
   
+  case 'creerUnCompte':
+    $creerUnCompteController = new creerUnCompteController();
+    switch ($action){
+      case 'creerUnCompte':
+        $creerUnCompteController->creerCompte();
+      break;
+    }
 
 }
