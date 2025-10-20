@@ -145,7 +145,8 @@ body{
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 8px; 
+  gap: 10px;
+  margin-bottom: 7px; 
 }
 
 .input-label {
@@ -223,7 +224,7 @@ input[type="password"]:focus {
 .btn-primary{
   background: var(--red);
   color: #fff;
-  margin-top: 4px;
+  margin-top: 15px;
 }
 .btn-primary:hover{ filter: brightness(1.03); }
 .btn-primary:active{ background: var(--red-press); }
@@ -231,7 +232,7 @@ input[type="password"]:focus {
 .btn-secondary{
   background: var(--red);
   color: #fff;
-  margin-top: 4px;
+  margin-top: -10px;
 }
 .btn-secondary:hover{ filter: brightness(1.03); }
 .btn-secondary:active{ background: var(--red-press); }
