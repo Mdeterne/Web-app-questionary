@@ -14,7 +14,27 @@ switch ($controller){
       case 'index':
         $homeController->index();
       break;
+
+      case 'creerQuestionnaire':
+        $homeController->creerQuestionnaire();
+      break;
+
+      case 'valider':
+        $homeController->valider();
+      break;
     }
   break;
+
+  case 'connexion':
+    $connexionController = new connexionController();
+    switch ($action){
+      case 'connexion':
+        $connexionController->connexion();
+      break;
+
+      case 'creerUnCompte':
+        $connexionController->creerUnCompte();
+      break;
+    }
 
 }

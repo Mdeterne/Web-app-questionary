@@ -37,7 +37,7 @@
     <section class="card" role="region" aria-labelledby="cardTitle">
       <h1 id="cardTitle" class="sr-only">Accéder ou créer un questionnaire</h1>
 
-      <form method="POST" action="ma_page.php">
+      <form method="POST" action="">
           <div class="input-wrap">
               <label for="pin" class="input-label">Code pin :</label>
               <input 
