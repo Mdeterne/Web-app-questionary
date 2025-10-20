@@ -46,7 +46,7 @@
   <main class="center">
   <section class="card" role="region" aria-labelledby="cardTitle">
 
-    <form method="POST" action="?c=compte&a=creation">
+    <form method="POST" action="?c=creerUnCompte&a=creerUnCompte">
         
         <div class="input-wrap">
             <label for="email" class="input-label">Adresse e-mail :</label>

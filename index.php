@@ -20,10 +20,6 @@ switch ($controleur){
         $homeControleur->index();
       break;
 
-      case 'creerQuestionnaire':
-        $homeControleur->creerQuestionnaire();
-      break;
-
       case 'valider':
         $homeControleur->valider();
       break;
@@ -33,18 +29,21 @@ switch ($controleur){
   case 'connexion':
     $connexionControleur = new connexionControleur();
     switch ($action){
-      case 'connexion':
-        $connexionControleur->connexion();
+      case 'index':
+        $connexionControleur->index();
       break;
 
-      case 'creerUnCompte':
-        $connexionControleur->creerUnCompte();
+      case 'connexion':
+        $connexionControleur->connexion();
       break;
     }
   
   case 'creerUnCompte':
     $creerUnCompteControleur = new creerUnCompteControleur();
     switch ($action){
+      case 'index':
+        $creerUnCompteControleur->index();
+
       case 'creerUnCompte':
         $creerUnCompteControleur->creerCompte();
       break;

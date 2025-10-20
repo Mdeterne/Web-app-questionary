@@ -13,11 +13,6 @@ class homeControleur {
         //}
 
         }
-
-    function creerQuestionnaire(){
-        require_once(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'Views'.DIRECTORY_SEPARATOR.'connexion'.DIRECTORY_SEPARATOR.'connexion.php');
-        
-    }
  
     function index(){
         //lien vers la vue

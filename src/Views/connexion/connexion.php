@@ -66,7 +66,7 @@
         <button class="btn btn-primary" type="submit">Se connecter</button>
     </form>
     
-    <a href="?c=connexion&a=creerUnCompte" class="btn btn-secondary">Créer un compte</a>
+    <a href="?c=creerUnCompte&a=index" class="btn btn-secondary">Créer un compte</a>
   </section>
 </main>
 
