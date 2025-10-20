@@ -46,7 +46,18 @@ body{
   letter-spacing: .02em;
 }
 
-.appicon{ font-size: 26px; line-height: 1; }
+.appicon {
+  font-size: 0;
+  color: transparent;
+  display: inline-block; 
+  width: 24px; 
+  height: 24px; 
+  background-image: url('ressources/appicon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%; 
+}
+
 .apptitle{
   font-size: clamp(20px, 2.4vw, 28px);
 }
@@ -153,7 +164,7 @@ input[type="text"]:focus{
 /* Clear button (icône) */
 .clear{
   position:absolute;
-  right: 8px; top: 34px;
+  right: 8px; top: 47px;
   transform: translateY(-50%);
   width: 30px; height: 30px;
   display:grid; place-items:center;
