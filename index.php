@@ -1,51 +1,72 @@
 <?php
 
-require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controllers".DIRECTORY_SEPARATOR."homeController.php";
-require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controllers".DIRECTORY_SEPARATOR."connexionController.php";
-require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controllers".DIRECTORY_SEPARATOR."creerUnCompteController.php";
+require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controleurs".DIRECTORY_SEPARATOR."homeControleur.php";
+require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controleurs".DIRECTORY_SEPARATOR."connexionControleur.php";
+require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controleurs".DIRECTORY_SEPARATOR."creerUnCompteControleur.php";
+require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controleurs".DIRECTORY_SEPARATOR."createurControleur.php";
 
-$controller = isset($_GET['c'])? $_GET['c'] : 'home';
+$controleur = isset($_GET['c'])? $_GET['c'] : 'home';
 $action = isset($_GET['a'])? $_GET['a'] : 'index';
 
-var_dump($controller);
+var_dump($controleur);
 var_dump($action);
 
-switch ($controller){
+switch ($controleur){
   
   case 'home':
-    $homeController = new homeController();
+    $homeControleur = new homeControleur();
     switch ($action){
       case 'index':
-        $homeController->index();
+        $homeControleur->index();
       break;
 
       case 'creerQuestionnaire':
-        $homeController->creerQuestionnaire();
+        $homeControleur->creerQuestionnaire();
       break;
 
       case 'valider':
-        $homeController->valider();
+        $homeControleur->valider();
       break;
     }
   break;
 
   case 'connexion':
-    $connexionController = new connexionController();
+    $connexionControleur = new connexionControleur();
     switch ($action){
       case 'connexion':
-        $connexionController->connexion();
+        $connexionControleur->connexion();
       break;
 
       case 'creerUnCompte':
-        $connexionController->creerUnCompte();
+        $connexionControleur->creerUnCompte();
       break;
     }
   
   case 'creerUnCompte':
-    $creerUnCompteController = new creerUnCompteController();
+    $creerUnCompteControleur = new creerUnCompteControleur();
     switch ($action){
       case 'creerUnCompte':
-        $creerUnCompteController->creerCompte();
+        $creerUnCompteControleur->creerCompte();
+      break;
+    }
+  
+  case 'createur':
+    $createurControleur = new createurControleur();
+    switch ($action){
+      case 'index':
+        $createurControleur->index();
+      break;
+
+      case 'espacePerso':
+        $createurControleur->espacePerso();
+      break;
+
+      case 'historique':
+        $createurControleur->historique();
+      break;
+
+      case 'nouveauFormulaire':
+        $createurControleur->nouveauFormulaire();
       break;
     }
 

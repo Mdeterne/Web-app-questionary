@@ -1,10 +1,11 @@
 <?php
 
-class homeController {
+class homeControleur {
     function valider(){
 
         $pin = $_POST['pin'];
 
+        echo $pin;
         //if ($pin = pinDansLaBase){  Regarde si le pin entré existe dans la base de donné
         //  récupère la page associé au pin et l'affiche
         //}else{
