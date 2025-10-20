@@ -68,16 +68,21 @@ body{
   font-weight:600;
 }
 .uni-badge{
-  display:inline-grid; place-items:center;
-  width:34px; height:34px; border-radius:8px;
-  background:#991111; color:#fff; font-weight:800;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  font-size: 0;
+  color: transparent;
+  display: inline-block; 
+  width: 24px;   
+  height: 24px;  
+  background-image: url('ressources/appuni.png');
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: 100%; 
+  border-radius: 4px; 
 }
 .uni-text{
   font-size: 15px;
 }
 
-/* ===== Background shapes ===== */
 .bg{
   position: fixed;
   inset: 64px 0 0 0;  /* sous la topbar */
