@@ -36,7 +36,7 @@
 <main class="center">
   <section class="card" role="region" aria-labelledby="cardTitle">
 
-    <form method="POST" action="login_action.php">
+    <form method="POST" action="?c=connexion&a=connexion">
         
         <div class="input-wrap">
             <label for="username" class="input-label">Nom d'utilisateur :</label>
@@ -65,7 +65,7 @@
         <button class="btn btn-primary" type="submit">Se connecter</button>
     </form>
     
-    <a href="creer_compte.php" class="btn btn-secondary">Créer un compte</a>
+    <a href="?c=connexion&a=creerUnCompte" class="btn btn-secondary">Créer un compte</a>
   </section>
 </main>
 
