@@ -55,7 +55,7 @@
 
           <button class="btn btn-primary" type="submit">Valider</button>
       </form>
-      <a class="btn btn-secondary" href="?c=home&a=creerQuestionnaire">Créer un questionnaire</a>
+      <a class="btn btn-secondary" href="?c=connexion&a=index">Créer un questionnaire</a>
     </section>
   </main>
 
