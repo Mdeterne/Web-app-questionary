@@ -5,27 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Questionary</title>
 
-  <!-- Police moderne et sobre -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Topbar -->
   <header class="topbar">
-    <a href="home.php" class="topbar__left">
+    <a href="" class="topbar__left">
       <span class="appicon" aria-hidden="true"></span>
       <span class="apptitle">QUESTIONARY</span>
     </a>
   
     <div class="topbar__right" aria-label="Université de Limoges">
-      <span class="uni-badge" aria-hidden="true"></span>
-        <span class="uni-text">Université de Limoges</span>
+      <span class="uni-badge" aria-hidden="true">uℓ</span> 
+      <span class="uni-text">Université de Limoges</span>
     </div>
   </header>
 
-  <!-- Fond formes -->
   <div class="bg">
     <span class="shape shape--oval"></span>
     <span class="shape shape--round"></span>
@@ -33,10 +30,8 @@
     <span class="shape shape--disk"></span>
   </div>
 
-  <!-- Contenu principal -->
   <main class="center">
     <section class="card" role="region" aria-labelledby="cardTitle">
-      <h1 id="cardTitle" class="sr-only">Accéder ou créer un questionnaire</h1>
 
       <form method="POST" action="?c=home&a=valider">
           <div class="input-wrap">
@@ -59,7 +54,6 @@
     </section>
   </main>
 
-  <!-- Pied de page -->
   <footer class="footer">
     <nav class="footer__links" aria-label="Liens légaux">
       <a href="#" title="Conditions générales">Conditions générales</a>
@@ -69,5 +63,25 @@
       <a href="#" title="Utilisation des cookies">Utilisation des cookies</a>
     </nav>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      
+      const clearButtons = document.querySelectorAll('.clear');
+      clearButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const inputWrapper = this.closest('.input-wrap');
+          if (inputWrapper) {
+            const inputField = inputWrapper.querySelector('input');
+            if (inputField) {
+              inputField.value = '';
+              inputField.focus();
+            }
+          }
+        });
+      });
+    
+    }); 
+  </script>   
 </body>
 </html>
