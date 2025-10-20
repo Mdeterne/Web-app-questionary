@@ -5,6 +5,8 @@ require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controllers"
 $controller = isset($_GET['c'])? $_GET['c'] : 'home';
 $action = isset($_GET['a'])? $_GET['a'] : 'index';
 
+var_dump($controller);
+var_dump($action);
 
 switch ($controller){
   
