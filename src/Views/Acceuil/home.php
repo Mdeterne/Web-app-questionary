@@ -39,13 +39,13 @@
 
       <form method="POST" action="?c=home&a=valider">
           <div class="input-wrap">
-              <label for="pin" class="input-label">Code pin :</label>
+              <label for="pin" class="input-label"></label>
               <input 
                   id="pin" 
                   name="pin" 
                   type="text" 
                   inputmode="numeric" 
-                  placeholder="" 
+                  placeholder="code pin" 
                   autocomplete="one-time-code" 
                   value="<?php echo $pin_value ?? ''; ?>"
                   />
