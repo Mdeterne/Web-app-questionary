@@ -25,7 +25,7 @@
 </head>
 <body>
   <header class="topbar">
-    <a href="home.php" class="topbar__left">
+    <a href="?c=home&a=index" class="topbar__left">
         <span class="appicon" aria-hidden="true"></span>
         <span class="apptitle">QUESTIONARY</span>
     </a>
