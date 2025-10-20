@@ -18,3 +18,5 @@ class homeController {
         require_once(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'Views'.DIRECTORY_SEPARATOR.'Accueil'.DIRECTORY_SEPARATOR.'home.php');
     }
 }
+
+//Joao is in the house
