@@ -14,7 +14,7 @@ class homeController {
         }
 
     function creerQuestionnaire(){
-        require_once(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'Views'.DIRECTORY_SEPARATOR.'connexion'.DIRECTORY_SEPARATOR.'home.php');
+        require_once(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'Views'.DIRECTORY_SEPARATOR.'connexion'.DIRECTORY_SEPARATOR.'connexion.php');
         
     }
  

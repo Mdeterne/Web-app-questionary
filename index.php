@@ -28,14 +28,14 @@ switch ($controller){
   break;
 
   case 'connexion':
-    $connexionController = new connexionContoller();
+    $connexionController = new connexionController();
     switch ($action){
       case 'connexion':
         $connexionController->connexion();
       break;
 
       case 'creerUnCompte':
-        $connexionController->creerCompte();
+        $connexionController->creerUnCompte();
       break;
     }
 
