@@ -1,6 +1,6 @@
 <?php
 
-class creerUnCompteController{
+class creerUnCompteControleur{
 
     function CreerCompte(){
         

@@ -1,6 +1,6 @@
 <?php
 
-class connexionController{
+class connexionControleur{
     function connexion(){
         
     }

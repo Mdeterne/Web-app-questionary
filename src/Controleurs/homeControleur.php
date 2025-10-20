@@ -1,6 +1,6 @@
 <?php
 
-class homeController {
+class homeControleur {
     function valider(){
 
         $pin = $_POST['pin'];
