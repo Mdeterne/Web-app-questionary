@@ -14,10 +14,11 @@
 <body>
   <!-- Topbar -->
   <header class="topbar">
-    <div class="topbar__left">
+    <a href="home.php" class="topbar__left">
       <span class="appicon" aria-hidden="true"></span>
       <span class="apptitle">QUESTIONARY</span>
-    </div>
+    </a>
+  
     <div class="topbar__right" aria-label="Université de Limoges">
       <span class="uni-badge" aria-hidden="true"></span>
       <span class="uni-text">Université de Limoges</span>
@@ -82,20 +83,17 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       
-      // Trouve TOUS les boutons avec la classe "clear"
       const clearButtons = document.querySelectorAll('.clear');
 
       clearButtons.forEach(button => {
         button.addEventListener('click', function() {
-          // 1. Trouve le parent ".input-wrap" le plus proche
+
           const inputWrapper = this.closest('.input-wrap');
           
           if (inputWrapper) {
-            // 2. Trouve le SEUL input dans ce parent
             const inputField = inputWrapper.querySelector('input');
             
             if (inputField) {
-              // 3. Vide cet input spécifique
               inputField.value = '';
               inputField.focus();
             }

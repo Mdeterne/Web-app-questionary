@@ -14,13 +14,14 @@
 <body>
   <!-- Topbar -->
   <header class="topbar">
-    <div class="topbar__left">
-      <span class="appicon" aria-hidden="true">🧾</span>
+    <a href="home.php" class="topbar__left">
+      <span class="appicon" aria-hidden="true"></span>
       <span class="apptitle">QUESTIONARY</span>
-    </div>
+    </a>
+  
     <div class="topbar__right" aria-label="Université de Limoges">
-      <span class="uni-badge" aria-hidden="true">uℓ</span>
-      <span class="uni-text">Université de Limoges</span>
+      <span class="uni-badge" aria-hidden="true"></span>
+        <span class="uni-text">Université de Limoges</span>
     </div>
   </header>
 

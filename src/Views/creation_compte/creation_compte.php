@@ -11,28 +11,30 @@
   <link rel="stylesheet" href="style.css" />
   
   <style>
-    .error-text {
-      color: var(--red); /* Utilise la variable rouge de votre CSS */
+      .error-text {
+      color: var(--red); 
       font-size: 14px;
       font-weight: 500;
       text-align: center;
-      margin-top: -8px; /* Espace négatif pour le rapprocher */
+      margin-top: -8px; 
       margin-bottom: 12px;
-      min-height: 1.2em; /* Empêche le layout de sauter */
+      min-height: 1.2em;
     }
   </style>
+
 </head>
 <body>
   <header class="topbar">
-    <div class="topbar__left">
-      <span class="appicon" aria-hidden="true"></span>
-      <span class="apptitle">QUESTIONARY</span>
-    </div>
+    <a href="home.php" class="topbar__left">
+        <span class="appicon" aria-hidden="true"></span>
+        <span class="apptitle">QUESTIONARY</span>
+    </a>
+  
     <div class="topbar__right" aria-label="Université de Limoges">
-      <span class="uni-badge" aria-hidden="true"></span>
-      <span class="uni-text">Université de Limoges</span>
+        <span class="uni-badge" aria-hidden="true"></span>
+        <span class="uni-text">Université de Limoges</span>
     </div>
-  </header>
+    </header>
 
   <div class="bg">
     <span class="shape shape--oval"></span>
@@ -112,7 +114,6 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       
-      // --- Logique pour les boutons "Effacer" (votre code) ---
       const clearButtons = document.querySelectorAll('.clear');
       clearButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -127,36 +128,26 @@
         });
       });
 
-      // --- NOUVEAU : Logique de validation de mot de passe ---
       
-      // 1. Sélectionner les éléments importants
       const form = document.querySelector('form');
       const passwordField = document.querySelector('#password');
       const confirmPasswordField = document.querySelector('#password_confirm');
       const errorMessage = document.querySelector('#error-message');
 
-      // 2. Écouter l'événement "submit" du formulaire
       form.addEventListener('submit', function(event) {
         
-        // 3. Vérifier si les mots de passe sont différents
         if (passwordField.value !== confirmPasswordField.value) {
           
-          // 4. Si différents :
-          // a. Empêcher le formulaire de s'envoyer
           event.preventDefault(); 
           
-          // b. Afficher un message d'erreur
           errorMessage.textContent = 'Erreur : Les mots de passe ne correspondent pas.';
           
         } else {
           
-          // 5. Si identiques : s'assurer qu'il n'y a pas de message d'erreur
           errorMessage.textContent = '';
-          // Le formulaire s'envoie normalement
         }
       });
 
-      // Optionnel : Effacer l'erreur si l'utilisateur re-tape
       passwordField.addEventListener('input', () => {
           errorMessage.textContent = '';
       });
