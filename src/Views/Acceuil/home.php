@@ -37,7 +37,7 @@
     <section class="card" role="region" aria-labelledby="cardTitle">
       <h1 id="cardTitle" class="sr-only">Accéder ou créer un questionnaire</h1>
 
-      <form method="POST" action="">
+      <form method="POST" action="?c=home&a=valider">
           <div class="input-wrap">
               <label for="pin" class="input-label">Code pin :</label>
               <input 
@@ -54,7 +54,7 @@
 
           <button class="btn btn-primary" type="submit">Valider</button>
       </form>
-      <button class="btn btn-secondary" type="button">Créer un questionnaire</button>
+      <button class="btn btn-secondary" href="?c=home&a=creerQuestionnaire" type="button">Créer un questionnaire</button>
     </section>
   </main>
 
