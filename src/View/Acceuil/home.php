@@ -37,13 +37,23 @@
     <section class="card" role="region" aria-labelledby="cardTitle">
       <h1 id="cardTitle" class="sr-only">Accéder ou créer un questionnaire</h1>
 
-      <div class="input-wrap">
-        <label for="pin" class="input-label">Code pin :</label>
-        <input id="pin" name="pin" type="text" inputmode="numeric" placeholder="" autocomplete="one-time-code" />
-        <button class="clear" type="button" aria-label="Effacer le code">✕</button>
-      </div>
+      <form method="POST" action="ma_page.php">
+          <div class="input-wrap">
+              <label for="pin" class="input-label">Code pin :</label>
+              <input 
+                  id="pin" 
+                  name="pin" 
+                  type="text" 
+                  inputmode="numeric" 
+                  placeholder="" 
+                  autocomplete="one-time-code" 
+                  value="<?php echo $pin_value ?? ''; ?>"
+                  />
+              <button class="clear" type="button" aria-label="Effacer le code">✕</button>
+          </div>
 
-      <button class="btn btn-primary" type="button">Valider</button>
+          <button class="btn btn-primary" type="submit">Valider</button>
+      </form>
       <button class="btn btn-secondary" type="button">Créer un questionnaire</button>
     </section>
   </main>
