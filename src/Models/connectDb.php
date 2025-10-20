@@ -17,3 +17,4 @@ catch (Exception $e)
     // En cas d'erreur, on affiche un message et on arrete le script
     die('Erreur : ' . $e->getMessage());
 }
+
