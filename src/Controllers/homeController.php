@@ -4,7 +4,8 @@ class homeController {
     function valider(){
 
         $code = trim($_POST['code'] ?? '');
-        $valider = trim($_POST['valider'] ?? '');
+
+        
 
     }
 
