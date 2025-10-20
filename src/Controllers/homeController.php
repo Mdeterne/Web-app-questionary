@@ -5,8 +5,6 @@ class homeController {
 
         $code = trim($_POST['code'] ?? '');
 
-        
-
     }
 
     function creerQuestionnaire(){
@@ -15,7 +13,7 @@ class homeController {
  
     function index(){
         //lien vers la vue
-        require_once(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'Views'.DIRECTORY_SEPARATOR.'Accueil'.DIRECTORY_SEPARATOR.'home.php');
+        require_once(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'Views'.DIRECTORY_SEPARATOR.'Acceuil'.DIRECTORY_SEPARATOR.'home.php');
     }
 }
 
