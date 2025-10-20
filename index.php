@@ -39,5 +39,12 @@ switch ($controller){
       break;
     }
   
+  case 'creerUnCompte':
+    $creerUnCompteController = new creerUnCompteController();
+    switch ($action){
+      case 'creerUnCompte':
+        $creerUnCompteController->creerCompte();
+      break;
+    }
 
 }
