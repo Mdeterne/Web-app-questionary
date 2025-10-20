@@ -1,11 +1,11 @@
 <?php
 
-class connexionContoller{
+class connexionController{
     function connexion(){
-
+        
     }
 
-    function creerCompte(){
-        
+    function creerUnCompte(){
+
     }
 }
