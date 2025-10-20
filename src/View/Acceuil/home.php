@@ -19,7 +19,7 @@
       <span class="apptitle">QUESTIONARY</span>
     </div>
     <div class="topbar__right" aria-label="Université de Limoges">
-      <span class="uni-badge">uℓ</span>
+      <span class="uni-badge" aria-hidden="true">uℓ</span>
       <span class="uni-text">Université de Limoges</span>
     </div>
   </header>
