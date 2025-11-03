@@ -1,0 +1,14 @@
+remarque:
+
+-attention glossaire nommage des terme
+
+-rendre moin accessible creation de questionnaire pour les utilisateur lambda
+
+-simplifier le rapport a l'analyse + SUPER important
+
+
+page manquante pour la maquette:
+
+- page de confirmation d'envoi de questionnaire
+- bouton parametre sur la page de creation/modification
+- bouton de récupération du qr code 
