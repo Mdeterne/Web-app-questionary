@@ -10,14 +10,15 @@ remarque:
 page manquante pour la maquette:
 
 - page de confirmation d'envoi de questionnaire
-- bouton parametre sur la page de creation/modification
-- bouton de récupération du qr code 
+- questionnaire complet en version mobile et desktop 
+- creation de toutes les vues possibles pour la creation de questionnaire 
+
 
 
 pour la présentation le 17:
 
-- détailler l'organisation et la répartition du travail au sein de votre équipe.
+- détailler l'organisation et la répartition du travail au sein de votre équipe. Faire par groupe de taches, ahmed a commencé.
 
 - Exposer, pour chaque membre de l'équipe, sa mission spécifique ainsi que les choix techniques et/ou fonctionnelles qu’elle ou il a effectué(e)s, ainsi que leurs justifications.
 
-- Présenter un planning prévisionnel de l’avancement de vos travaux et développement jusqu’à la finalisation du projet.
+- Présenter un planning prévisionnel de l’avancement de vos travaux et développement jusqu’à la finalisation du projet. (Finis)
