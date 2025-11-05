@@ -36,13 +36,6 @@
     </div>
     </header>
 
-  <div class="bg">
-    <span class="shape shape--oval"></span>
-    <span class="shape shape--round"></span>
-    <span class="shape shape--tile"></span>
-    <span class="shape shape--disk"></span>
-  </div>
-
   <main class="center">
   <section class="card" role="region" aria-labelledby="cardTitle">
 

@@ -14,24 +14,17 @@
 <body>
   <!-- Topbar -->
   <header class="topbar">
-    <a href="?c=home&a=index" class="topbar__left">
-      <span class="appicon" aria-hidden="true"></span>
-      <span class="apptitle">QUESTIONARY</span>
-    </a>
-  
+    <div class="topbar__left">
+      <a href="" class="topbar__logo" href="?c=home&a=index">
+        <span class="appicon" aria-hidden="true"></span>
+        <span class="apptitle">QUESTIONARY</span>
+      </a>
+    </div>
     <div class="topbar__right" aria-label="Université de Limoges">
-      <span class="uni-badge" aria-hidden="true"></span>
+      <span class="uni-badge" aria-hidden="true">uℓ</span> 
       <span class="uni-text">Université de Limoges</span>
     </div>
   </header>
-
-  <!-- Fond formes -->
-  <div class="bg">
-    <span class="shape shape--oval"></span>
-    <span class="shape shape--round"></span>
-    <span class="shape shape--tile"></span>
-    <span class="shape shape--disk"></span>
-  </div>
 
   <!-- Contenu principal -->
 <main class="center">
