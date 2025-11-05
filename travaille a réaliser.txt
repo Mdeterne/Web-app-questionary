@@ -20,4 +20,8 @@ pour la présentation le 17:
 
 - Exposer, pour chaque membre de l'équipe, sa mission spécifique ainsi que les choix techniques et/ou fonctionnelles qu’elle ou il a effectué(e)s, ainsi que leurs justifications.
 
-- Présenter un planning prévisionnel de l’avancement de vos travaux et développement jusqu’à la finalisation du projet.
+
+
+
+- Présenter un planning prévisionnel de l’avancement de vos travaux et développement jusqu’à la finalisation du projet:
+
