@@ -9,6 +9,7 @@ require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controleurs"
 
 $controleur = isset($_GET['c'])? $_GET['c'] : 'home';
 $action = isset($_GET['a'])? $_GET['a'] : 'index';
+$questionaire = isset($_GET['q'])? $_GET['q'] : '0';
 
 var_dump($controleur);
 var_dump($action);
@@ -40,53 +41,42 @@ switch ($controleur){
       break;
     }break;
   
-  case 'creerUnCompte':
-    $creerUnCompteControleur = new creerUnCompteControleur();
-    switch ($action){
-      case 'index':
-        $creerUnCompteControleur->index();
+  // case 'creerUnCompte':
+  //   $creerUnCompteControleur = new creerUnCompteControleur();
+  //   switch ($action){
+  //     case 'index':
+  //       $creerUnCompteControleur->index();
 
-      case 'creerUnCompte':
-        $creerUnCompteControleur->creerCompte();
-      break;
-    }break;
-  
-  case 'createur':
-    $createurControleur = new createurControleur();
-    switch ($action){
-      case 'index':
-        $createurControleur->index();
-      break;
+  //     case 'creerUnCompte':
+  //       $creerUnCompteControleur->creerCompte();
+  //     break;
+  //   }break;
 
-      case 'historique':
-        $createurControleur->historique();
-      break;
-
-      case 'nouveauFormulaire':
-        $createurControleur->nouveauFormulaire();
-      break;
-    }break;
-
-
-    case 'espacePerso':
-    $espacePersoControleur = new espacePersoControleur();
-    switch ($action){
+  case 'espacePerso':
+  $espacePersoControleur = new espacePersoControleur();
+  switch ($action){
           
-      case 'index':
-        $espacePersoControleur->index();
-      break;
+    case 'index':
+      $espacePersoControleur->index();
+    break;
           
-      case 'getMesQuestionnaires':
-        $espacePersoControleur->getMesQuestionnaires();
-      break;
+    case 'getMesQuestionnaires':
+      $espacePersoControleur->getMesQuestionnaires();
+    break;
 
-      case 'creerNouveau':
-        $espacePersoControleur->creerNouveau();
-      break;
+    case 'creerNouveau':
+      $espacePersoControleur->creerNouveau();
+    break;
         
-      case 'supprimer':
-        $espacePersoControleur->supprimer();
-      break;
+    case 'supprimer':
+      $espacePersoControleur->supprimer();
+    break;
 
-    }break;
+  case 'questionaire':
+    $questionaireControleur = new questionnaireControleur();
+    switch ($action){
+      case 'index':
+        $questionaireControleur->index($q);
+    }
+  }break;
 }
