@@ -4,6 +4,7 @@ require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controleurs"
 require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controleurs".DIRECTORY_SEPARATOR."connexionControleur.php";
 require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controleurs".DIRECTORY_SEPARATOR."creerUnCompteControleur.php";
 require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controleurs".DIRECTORY_SEPARATOR."createurControleur.php";
+
 require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controleurs".DIRECTORY_SEPARATOR."espacePersoControleur.php";
 
 $controleur = isset($_GET['c'])? $_GET['c'] : 'home';
@@ -76,6 +77,7 @@ switch ($controleur){
     switch ($action){
       case 'index':
         $questionaireControleur->index($q);
+      break;
     }
   }break;
 }
