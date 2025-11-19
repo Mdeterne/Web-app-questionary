@@ -5,7 +5,7 @@
   --topbar-ink: #ffffff;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   --btn-dark: #252525;
-  --btn-dark-hover: #424242;
+  --btn-dark-hover: #252525;
   --radius-xl: 18px;
 }
 
@@ -380,17 +380,17 @@ input[type="password"]:focus {
 
 /* --- SIDEBAR (Gauche) --- */
 .sidebar {
-    width: 260px;
-    background-color: #444; /* Fond gris foncé */
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid #555;
+  width: 260px;
+  background-color: #252525; /* Fond gris foncé */
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #252525;
 }
 
 /* La boite blanche "Résultats" */
 .sidebar-header-box {
     background-color: white;
-    color: #333;
+  color: #252525;
     font-weight: bold;
     padding: 15px 20px;
     text-align: left;
@@ -412,7 +412,7 @@ input[type="password"]:focus {
     border-radius: 20px; /* Arrondi comme sur l'image */
     text-align: left;
     font-weight: bold;
-    color: #333;
+  color: #252525;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -439,7 +439,7 @@ input[type="password"]:focus {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #222;
+  color: #252525;
 }
 
 /* --- SECTION CREATION (Les 2 grandes cartes) --- */
@@ -474,7 +474,7 @@ input[type="password"]:focus {
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    color: #333;
+    color: #252525;
 }
 
 .btn-import {
@@ -482,7 +482,7 @@ input[type="password"]:focus {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    color: #333;
+  color: #252525;
 }
 
 /* --- GRILLE QUESTIONNAIRES --- */
@@ -513,7 +513,7 @@ input[type="password"]:focus {
 
 .card-q-qr {
     font-size: 2.5rem; /* Taille du QR Code */
-    color: #222;
+  color: #252525;
 }
 
 
@@ -548,9 +548,7 @@ input[type="password"]:focus {
   right: 20px; /* Collée à droite */
   top: 50%;
   transform: translateY(-50%);
-  color: #000; /* Noir comme la bordure */
-  font-size: 1.2rem;
-  pointer-events: none;
+  color: #252525
 }
 
 .user-profile {
@@ -558,6 +556,108 @@ input[type="password"]:focus {
   color: #ccc;
   cursor: pointer;
   flex-shrink: 0; /* Empêche l'icône de s'écraser */
+}
+
+/* Menu déroulant du profil */
+/* Fond sombre qui couvre tout l'écran derrière la modale */
+/* L'overlay est maintenant transparent et permet de fermer au clic extérieur */
+.modal-overlay {
+    position: fixed;
+    top: 100px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Juste en dessous du menu */
+    background-color: transparent; /* Fond invisible */
+    cursor: default;
+}
+
+/* La carte du menu positionnée sous l'icône */
+.user-modal-card {
+    position: absolute; /* Se place par rapport à .top-tools */
+    top: 50px;          /* Décale de 50px vers le bas */
+    right: 0;           /* Colle à droite (sous l'icône profil) */
+    z-index: 1001;      /* Au dessus de l'overlay */
+    
+    width: 300px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+    
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Contenu du menu --- */
+.modal-close-btn {
+    display: none; /* Pas besoin de croix */
+}
+
+.modal-avatar {
+    width: 60px;
+    height: 60px;
+    background-color: #f1f3f4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    color: #5f6368;
+    font-size: 1.8rem;
+}
+
+.modal-username {
+    margin: 5px 0 20px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #202124;
+}
+
+.modal-logout-btn {
+    background-color: #fff;
+    border: 1px solid #dadce0;
+    color: #3c4043;
+    text-decoration: none;
+    padding: 8px 24px;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    transition: background 0.1s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-logout-btn:hover {
+    background-color: #f8f9fa;
+    border-color: #dadce0;
+}
+
+.modal-footer {
+    margin-top: 10px;
+    font-size: 0.75rem;
+    color: #70757a;
+    border-top: 1px solid #f1f3f4;
+    padding-top: 15px;
+    width: 100%;
+}
+
+.modal-footer a {
+    color: #70757a;
+    text-decoration: none;
+    margin: 0 5px;
 }
 
 /* Responsive : Si l'écran est petit, on passe à moins de colonnes */

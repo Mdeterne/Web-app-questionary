@@ -11,20 +11,19 @@
 </head>
 <body>
 
-        <header class="topbar">
-                <div class="topbar__left">
-                    <a href="" class="topbar__logo">
-                        <span class="appicon" aria-hidden="true"></span>
-                        <span class="apptitle">QUESTIONARY</span>
-                    </a>
-                    <a class="topbar__create-link" href="?c=connexion&a=index">Créer un questionnaire</a>
-                </div>
+    <header class="topbar">
+        <div class="topbar__left">
+            <a href="" class="topbar__logo">
+                <span class="appicon" aria-hidden="true"></span>
+                <span class="apptitle">QUESTIONARY</span>
+            </a>
+        </div>
         
-                <div class="topbar__right" aria-label="Université de Limoges">
-                    <span class="uni-badge" aria-hidden="true">uℓ</span> 
-                    <span class="uni-text">Université de Limoges</span>
-                </div>
-        </header>
+        <div class="topbar__right" aria-label="Université de Limoges">
+            <span class="uni-badge" aria-hidden="true">uℓ</span> 
+            <span class="uni-text">Université de Limoges</span>
+        </div>
+    </header>
 
     <div class="app-container">
 
@@ -46,8 +45,33 @@
                         <input type="text" placeholder="Rechercher" class="search-input" v-model="termeRecherche">
                     </div>
                 </div>
-                <div class="user-profile">
+                
+                <!-- Bouton profil avec le clic -->
+                <div class="user-profile" @click="toggleUserMenu" style="cursor: pointer;">
                     <i class="fa-solid fa-circle-user"></i>
+                </div>
+
+                <!-- Menu Modal -->
+                <div class="modal-overlay" v-if="showUserMenu" @click.self="toggleUserMenu">
+                    <div class="user-modal-card">
+                        
+                        <button class="modal-close-btn" @click="toggleUserMenu">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+
+                        <div class="modal-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <h3 class="modal-username">Nom d'utilisateur</h3>
+
+                        <a href="?c=connexion&a=deconnecter" class="modal-logout-btn">
+                            Se déconnecter <i class="fa-solid fa-right-from-bracket"></i>
+                        </a>
+
+                        <div class="modal-footer">
+                            <a href="#">Conditions générales</a> | <a href="#">Confidentialité</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -72,14 +96,16 @@
                 <div v-if="!questionnairesFiltres || questionnairesFiltres.length === 0" style="grid-column: 1 / -1; color: #888;">
                     Vous n'avez pas encore créé de questionnaire.
                 </div>
+                
+                <!-- Ici s'afficheraient vos questionnaires (boucle v-for si vous en aviez) -->
 
             </section>
 
         </main>
     </div>
 
-    <script src="https://unpkg.com/vue@3"></script>
-    <script src="js/dashboard-app.js"></script>
+    <!-- UNE SEULE LIGNE DE SCRIPT ICI (C'est le plus important) -->
+    <script type="module" src="js/dashboard-app.js"></script>
 
 </body>
 </html>
