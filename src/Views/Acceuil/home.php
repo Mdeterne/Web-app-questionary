@@ -29,14 +29,11 @@
 
   <main class="center">
     <div class="content-grid">
-      <div class="splash-bg" aria-hidden="true"></div>
-     
       <section class="card" role="region" aria-label="Accéder à un questionnaire">
-        
-
         <form method="POST" action="?c=home&a=valider">
           <div class="input-wrap">
-            <label for="pin" class="input-label">Code pin</label>
+            <label for="pin" class="input-label"></label>
+            
             <input 
               id="pin" 
               name="pin" 
