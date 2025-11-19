@@ -37,7 +37,7 @@
             <input 
               id="pin" 
               name="pin" 
-              type="text" 
+              type="text"
               inputmode="numeric" 
               placeholder="Code pin" 
               autocomplete="one-time-code" 

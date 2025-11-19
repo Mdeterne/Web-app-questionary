@@ -10,9 +10,6 @@ require_once __dir__.DIRECTORY_SEPARATOR."src".DIRECTORY_SEPARATOR."Controleurs"
 $controleur = isset($_GET['c'])? $_GET['c'] : 'home';
 $action = isset($_GET['a'])? $_GET['a'] : 'index';
 
-var_dump($controleur);
-var_dump($action);
-
 switch ($controleur){
   
   case 'home':
