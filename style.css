@@ -7,18 +7,12 @@
   --btn-dark: #252525;
   --btn-dark-hover: #424242;
   --radius-xl: 18px;
-  --radius-2xl: 26px;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   height: 100%;
-}
-
-body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--ink);
@@ -37,8 +31,7 @@ body {
   align-items: center;
   justify-content: space-between;
   background: var(--topbar-bg);
-  color: var(--topbar-ink);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: var(--topbar-ink); 
 }
 
 .topbar__left {
@@ -145,23 +138,6 @@ a.topbar__logo:hover {
   gap: 16px;
 } 
 
-.splash-bg {
-  position: absolute;
-  z-index: 1;        
-  
-  background-image: url('ressources/splash.png'); 
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-
-
-  width: 600px;  
-  height: 600px;
-  top: 100px;  
-  left: 70px; 
-
-}
-
 .description h1 {
   font-size: clamp(28px, 3.2vw, 40px);
   font-weight: 700;
@@ -218,6 +194,7 @@ input[type="password"]:focus {
   background: #fff;
   border-color: var(--red);
   box-shadow: 0 0 0 4px rgba(181, 36, 36, 0.1);
+  text-align: left;
 }
 
 .clear {
@@ -355,10 +332,6 @@ input[type="password"]:focus {
     order: -1;
   }
 
-  .card::before {
-    inset: -20px;
-    opacity: 0.8;
-  }
 }
 
 @media (max-width: 520px) {
@@ -396,3 +369,200 @@ input[type="password"]:focus {
   }
 }
 
+/*espace createur*/
+
+/* --- LAYOUT (Sidebar + Main) --- */
+.app-container {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 60px); /* Reste de la hauteur */
+}
+
+/* --- SIDEBAR (Gauche) --- */
+.sidebar {
+    width: 260px;
+    background-color: #444; /* Fond gris foncé */
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #555;
+}
+
+/* La boite blanche "Résultats" */
+.sidebar-header-box {
+    background-color: white;
+    color: #333;
+    font-weight: bold;
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+.sidebar-nav {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-btn {
+    width: 100%;
+    background-color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px; /* Arrondi comme sur l'image */
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.sidebar-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- MAIN CONTENT (Droite) --- */
+.main-content {
+    flex: 1;
+    background-color: white;
+    padding: 30px 50px;
+    overflow-y: auto; /* Scroll vertical si ça déborde */
+}
+
+
+
+/* --- TITRES DE SECTION --- */
+.section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* --- SECTION CREATION (Les 2 grandes cartes) --- */
+.create-section {
+    display: flex;
+    gap: 40px; /* Espace entre les cartes */
+    margin-bottom: 50px;
+}
+
+.card-create {
+    width: 220px;
+    height: 300px; /* Cartes hautes */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.card-create:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-plus {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.btn-import {
+    padding: 10px 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* --- GRILLE QUESTIONNAIRES --- */
+.questionnaire-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    /* Utilisation de Grid si tu veux être strict 4 par ligne, sinon Flex wrap fonctionne aussi */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes exactes */
+}
+
+.card-q {
+    border: 1px solid #888; /* Bordure un peu plus foncée comme l'image */
+    border-radius: 6px;
+    height: 100px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.card-q-title {
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.card-q-qr {
+    font-size: 2.5rem; /* Taille du QR Code */
+    color: #222;
+}
+
+
+/* --- BARRE D'OUTILS DU HAUT (Recherche + Profil) --- */
+.top-tools {
+    display: flex;
+    justify-content: space-between; /* Sépare la recherche du profil */
+    align-items: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* Conteneur qui centre la barre de recherche */
+.search-bar-container {
+    flex: 1; /* Prend tout l'espace disponible */
+    display: flex;
+    justify-content: center; /* Centre la barre horizontalement */
+    padding: 0 40px; /* Marges pour ne pas coller au profil */
+}
+
+/* L'enveloppe de l'input et de l'icône */
+.search-wrapper {
+    position: relative; /* Nécessaire pour positionner l'icône en absolu */
+    width: 100%;
+    max-width: 600px; /* Largeur maximale pour ressembler à la maquette */
+    
+}
+
+/* L'icône loupe (Positionnée à DROITE maintenant) */
+.search-icon {
+  position: absolute;
+  right: 20px; /* Collée à droite */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000; /* Noir comme la bordure */
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+.user-profile {
+  font-size: 2.5rem;
+  color: #ccc;
+  cursor: pointer;
+  flex-shrink: 0; /* Empêche l'icône de s'écraser */
+}
+
+/* Responsive : Si l'écran est petit, on passe à moins de colonnes */
+@media (max-width: 1200px) {
+    .questionnaire-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
