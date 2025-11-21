@@ -216,6 +216,10 @@ input[type="password"]:focus {
   background: #e0e2e7;
 }
 
+#pin {
+  place-items: center;
+}
+
 /* ===== Buttons ===== */
 .btn {
   appearance: none;
@@ -539,8 +543,8 @@ input[type="password"]:focus {
     position: relative; /* Nécessaire pour positionner l'icône en absolu */
     width: 100%;
     max-width: 600px; /* Largeur maximale pour ressembler à la maquette */
-    
 }
+
 
 /* L'icône loupe (Positionnée à DROITE maintenant) */
 .search-icon {
