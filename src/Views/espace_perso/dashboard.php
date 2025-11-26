@@ -46,12 +46,10 @@
                     </div>
                 </div>
                 
-                <!-- Bouton profil avec le clic -->
                 <div class="user-profile" @click="toggleUserMenu" style="cursor: pointer;">
                     <i class="fa-solid fa-circle-user"></i>
                 </div>
 
-                <!-- Menu Modal -->
                 <div class="modal-overlay" v-if="showUserMenu" @click.self="toggleUserMenu">
                     <div class="user-modal-card">
                         
@@ -77,14 +75,15 @@
 
             <h2 class="section-title">Créer un questionnaire</h2>
             <section class="create-section">
-                
-                <div class="card-create" @click="creerNouveau">
-                    <div class="btn-plus">
-                        <i class="fa-solid fa-plus"></i>
+                <a href ="?c=createur&a=nouveauFormulaire">
+                    <div class="card-create" @click="creerNouveau">
+                        <div class="btn-plus">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="card-create">
+                <div class="card-create" @click="showImportModal = true">
                     <div class="btn-import">Importer</div>
                 </div>
 
@@ -97,14 +96,41 @@
                     Vous n'avez pas encore créé de questionnaire.
                 </div>
                 
-                <!-- Ici s'afficheraient vos questionnaires (boucle v-for si vous en aviez) -->
+                <div v-for="q in questionnairesFiltres" :key="q.id" class="card-q">
+                    <div class="card-q-title">{{ q.titre }}</div>
+                    <div class="card-q-qr">
+                         <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                     <i @click="supprimer(q.id)" class="fa-solid fa-trash" style="cursor:pointer; color: var(--red);"></i>
+                </div>
 
             </section>
+
+            <div class="modal-blur-overlay" v-if="showImportModal" @click.self="showImportModal = false">
+                <div class="import-card">
+                    
+                    <div>
+                        <h3 class="import-title">Importer un questionnaire</h3>
+                        <p class="import-desc">Collez le lien du questionnaire que vous souhaitez ajouter à votre espace.</p>
+                    </div>
+
+                    <input type="text" 
+                           class="input-import" 
+                           placeholder="https://questionary.app/..." 
+                           v-model="lienImport"
+                           @keyup.enter="validerImport">
+
+                    <div class="modal-actions">
+                        <button class="btn-cancel" @click="showImportModal = false">Annuler</button>
+                        <button class="btn-confirm-import" @click="validerImport">Importer</button>
+                    </div>
+
+                </div>
+            </div>
 
         </main>
     </div>
 
-    <!-- UNE SEULE LIGNE DE SCRIPT ICI (C'est le plus important) -->
     <script type="module" src="js/dashboard-app.js"></script>
 
 </body>

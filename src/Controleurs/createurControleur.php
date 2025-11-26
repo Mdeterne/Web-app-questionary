@@ -14,6 +14,6 @@ class createurControleur{
     }
 
     function nouveauFormulaire(){
-        
+        require_once(__DIR__.'/../Views/creation_questionnaire/creation_questionnaire.php');
     }
 }

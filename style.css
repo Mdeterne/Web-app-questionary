@@ -583,7 +583,7 @@ input[type="password"]:focus {
 /* La carte du menu positionnée sous l'icône */
 .user-modal-card {
     position: absolute; /* Se place par rapport à .top-tools */
-  top: 64px;          /* Décale sous le header */
+  top: 150px;          /* Décale sous le header */
   right: clamp(16px, 4vw, 36px); /* Positionne sous l'icône profil */
     z-index: 1001;      /* Au dessus de l'overlay */
     
