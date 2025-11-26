@@ -3,19 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Questionary</title>
+  <title>Questionary - Connexion</title>
 
-  <!-- Police moderne et sobre -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .error-text {
+      color: #b52424;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      margin-top: 8px;
+      min-height: 1.2em;
+    }
+    .success-text {
+      color: #28a745;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 12px;
+      min-height: 1.2em;
+    }
+  </style>
 </head>
 <body>
-  <!-- Topbar -->
   <header class="topbar">
     <div class="topbar__left">
-      <a href="" class="topbar__logo" href="?c=home&a=index">
+      <a href="?c=home&a=index" class="topbar__logo">
         <span class="appicon" aria-hidden="true"></span>
         <span class="apptitle">QUESTIONARY</span>
       </a>
@@ -26,9 +42,14 @@
     </div>
   </header>
 
-  <!-- Contenu principal -->
-<main class="center">
+  <main class="center">
   <section class="card" role="region" aria-labelledby="cardTitle">
+    <?php 
+    $error = isset($_GET['error']) ? htmlspecialchars($_GET['error'], ENT_QUOTES, 'UTF-8') : '';
+    $success = isset($_GET['success']) ? htmlspecialchars($_GET['success'], ENT_QUOTES, 'UTF-8') : '';
+    if ($success === 'account_created'): ?>
+      <p class="success-text">Compte créé avec succès ! Connectez-vous.</p>
+    <?php endif; ?>
 
     <form method="POST" action="?c=connexion&a=connexion">
         
@@ -40,7 +61,7 @@
                 type="text" 
                 inputmode="text" placeholder="" 
                 autocomplete="username"
-                value="<?php echo $username_value ?? ''; ?>" />
+                required />
             <button class="clear" type="button" aria-label="Effacer le nom d'utilisateur">✕</button>
         </div>
 
@@ -51,10 +72,14 @@
                 name="mot_de_passe" 
                 type="password" inputmode="text" placeholder="" 
                 autocomplete="current-password"
-                value="<?php echo $username_value ?? ''; ?>"
-                /> <button class="clear" type="button" aria-label="Effacer le mot de passe">✕</button>
+                required /> <button class="clear" type="button" aria-label="Effacer le mot de passe">✕</button>
         </div>
 
+        <?php if ($error === 'empty_fields'): ?>
+          <p class="error-text">Veuillez remplir tous les champs.</p>
+        <?php elseif ($error === 'invalid_credentials'): ?>
+          <p class="error-text">Identifiants incorrects.</p>
+        <?php endif; ?>
         
         <button class="btn btn-primary" type="submit">Se connecter</button>
     </form>
@@ -63,7 +88,6 @@
   </section>
 </main>
 
-  <!-- Pied de page -->
   <footer class="footer">
     <nav class="footer__links" aria-label="Liens légaux">
       <a href="#" title="Conditions générales">Conditions générales</a>
@@ -96,7 +120,5 @@
     });
   </script>
 
-</body>
-</html>
 </body>
 </html>

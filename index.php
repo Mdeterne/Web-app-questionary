@@ -11,9 +11,6 @@ $controleur = isset($_GET['c'])? $_GET['c'] : 'home';
 $action = isset($_GET['a'])? $_GET['a'] : 'index';
 $questionaire = isset($_GET['q'])? $_GET['q'] : '0';
 
-var_dump($controleur);
-var_dump($action);
-
 switch ($controleur){
   
   case 'home':
@@ -41,16 +38,17 @@ switch ($controleur){
       break;
     }break;
   
-  // case 'creerUnCompte':
-  //   $creerUnCompteControleur = new creerUnCompteControleur();
-  //   switch ($action){
-  //     case 'index':
-  //       $creerUnCompteControleur->index();
+  case 'creerUnCompte':
+    $creerUnCompteControleur = new creerUnCompteControleur();
+    switch ($action){
+      case 'index':
+        $creerUnCompteControleur->index();
+      break;
 
-  //     case 'creerUnCompte':
-  //       $creerUnCompteControleur->creerCompte();
-  //     break;
-  //   }break;
+      case 'creerUnCompte':
+        $creerUnCompteControleur->creerCompte();
+      break;
+    }break;
 
   case 'espacePerso':
   $espacePersoControleur = new espacePersoControleur();

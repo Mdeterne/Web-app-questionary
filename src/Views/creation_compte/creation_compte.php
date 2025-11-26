@@ -12,7 +12,7 @@
   
   <style>
       .error-text {
-      color: var(--red); 
+      color: #b52424; 
       font-size: 14px;
       font-weight: 500;
       text-align: center;
@@ -39,6 +39,16 @@
   <main class="center">
   <section class="card" role="region" aria-labelledby="cardTitle">
 
+    <?php 
+    $error = isset($_GET['error']) ? htmlspecialchars($_GET['error'], ENT_QUOTES, 'UTF-8') : '';
+    if ($error === 'empty_fields'): ?>
+      <p class="error-text">Veuillez remplir tous les champs.</p>
+    <?php elseif ($error === 'invalid_email'): ?>
+      <p class="error-text">L'adresse e-mail n'est pas valide.</p>
+    <?php elseif ($error === 'password_mismatch'): ?>
+      <p class="error-text">Les mots de passe ne correspondent pas.</p>
+    <?php endif; ?>
+
     <form method="POST" action="?c=creerUnCompte&a=creerUnCompte">
         
         <div class="input-wrap">
@@ -46,10 +56,10 @@
             <input 
                 id="email" 
                 name="adresse_email" 
-                type="text" 
+                type="email" 
                 inputmode="email" placeholder="" 
                 autocomplete="email"
-                value="<?php echo $username_value ?? ''; ?>" />
+                required />
             <button class="clear" type="button" aria-label="Effacer l'adresse e-mail">✕</button>
         </div>
 
@@ -61,7 +71,7 @@
                 type="text" 
                 inputmode="text" placeholder="" 
                 autocomplete="username"
-                value="<?php echo $username_value ?? ''; ?>" />
+                required />
             <button class="clear" type="button" aria-label="Effacer le nom d'utilisateur">✕</button>
         </div>
 
@@ -72,7 +82,9 @@
                 type="password" 
                 inputmode="text" 
                 placeholder="" 
-                autocomplete="new-password" />
+                autocomplete="new-password"
+                minlength="8"
+                required />
                 <button class="clear" type="button" aria-label="Effacer le mot de passe">✕</button>
                 
         </div>
@@ -83,7 +95,9 @@
                 id="password_confirm" name="mot_de_passe_confirm" type="password" 
                 inputmode="text" 
                 placeholder="" 
-                autocomplete="new-password" /> <button class="clear" type="button" aria-label="Effacer le mot de passe">✕</button>
+                autocomplete="new-password"
+                minlength="8"
+                required /> <button class="clear" type="button" aria-label="Effacer le mot de passe">✕</button>
         </div>
 
         <div id="error-message" class="error-text"></div>
@@ -91,6 +105,7 @@
         <button class="btn btn-primary" type="submit">Créer un compte</button>
     </form>
     
+    <a href="?c=connexion&a=index" class="btn btn-secondary" style="margin-top: 10px;">J'ai déjà un compte</a>
   </section>
 </main>
 

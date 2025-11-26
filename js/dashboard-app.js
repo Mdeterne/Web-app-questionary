@@ -1,6 +1,12 @@
-import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+// Mock data for questionnaires (to be replaced with real backend API)
+const mockMesQuestionnaires = [
+  { "id": 1, "titre": "Sondage Satisfaction Client 2024", "pin": "123456" },
+  { "id": 2, "titre": "Quiz de Noël - Équipe Marketing", "pin": "789012" },
+  { "id": 3, "titre": "Formulaire d'inscription Webinaire", "pin": "456789" },
+  { "id": 4, "titre": "Test de connaissances PHP", "pin": "987654" }
+];
 
-import { mockMesQuestionnaires } from './mock-data.js'; 
+const { createApp } = Vue;
 
 createApp({
     data() {

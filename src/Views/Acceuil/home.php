@@ -9,12 +9,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .error-text {
+      color: #b52424;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      margin-top: 8px;
+      min-height: 1.2em;
+    }
+  </style>
   
 </head>
 <body>
   <header class="topbar">
     <div class="topbar__left">
-      <a href="" class="topbar__logo">
+      <a href="?c=home&a=index" class="topbar__logo">
         <span class="appicon" aria-hidden="true"></span>
         <span class="apptitle">QUESTIONARY</span>
       </a>
@@ -41,10 +51,19 @@
               inputmode="numeric" 
               placeholder="Code pin" 
               autocomplete="one-time-code" 
-              value="<?php echo $pin_value ?? ''; ?>"
+              pattern="[0-9]{4,8}"
+              maxlength="8"
+              required
               />
             <button class="clear" type="button" aria-label="Effacer le code">✕</button>
           </div>
+          <?php 
+          $error = isset($_GET['error']) ? htmlspecialchars($_GET['error'], ENT_QUOTES, 'UTF-8') : '';
+          if ($error === 'invalid_pin'): ?>
+            <p class="error-text">Le code PIN doit contenir entre 4 et 8 chiffres.</p>
+          <?php elseif ($error === 'pin_not_found'): ?>
+            <p class="error-text">Ce code PIN n'existe pas ou le questionnaire n'est plus actif.</p>
+          <?php endif; ?>
           <button class="btn btn-primary" type="submit">Valider</button>
         </form>
         </section>
