@@ -211,7 +211,7 @@
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     
-    <script type="module" src="js/dashboard-app.js"></script>
+    <script src="js/dashboard-app.js"></script>
 
 </body>
 </html>
