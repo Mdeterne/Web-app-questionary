@@ -1,29 +1,46 @@
 <?php
-require_once __DIR__ . '/../../lib/CAS/CAS.php'; 
 
-// Configuration du serveur CAS unilim.fr
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Désactiver l'autoloader dépréciée de phpCAS pour éviter les warnings
+if (function_exists('spl_autoload_unregister')) {
+    // Supprimer tous les autoloaders enregistrés par phpCAS avant l'include
+    $autoloaders = spl_autoload_functions();
+    if ($autoloaders) {
+        foreach ($autoloaders as $autoloader) {
+            spl_autoload_unregister($autoloader);
+        }
+    }
+}
+
+// Inclure phpCAS depuis les sources directement
+require_once __DIR__ . '/../../lib/CAS/source/CAS.php';
+
+// Réenregistrer les autoloaders si nécessaire
+if (isset($autoloaders) && $autoloaders) {
+    foreach ($autoloaders as $autoloader) {
+        spl_autoload_register($autoloader);
+    }
+}
+
+// CONFIGURATION DU SERVEUR CAS
 $cas_host = 'cas.unilim.fr';
-$cas_context = '/cas'; // Contexte standard pour unilim
-$cas_port = 443; // HTTPS
-$cas_version = CAS_VERSION_2_0;
-$service_base_url = 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']);
+$cas_context = '/cas';
+$cas_port = 443;
 
 // Initialisation de phpCAS
-phpCAS::client($cas_version, $cas_host, $cas_port, $cas_context, $service_base_url);
+phpCAS::client(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context, '');
 
-
-
-// Vérification stricte du certificat 
-// phpCAS::setCasServerCACert('/path/to/ca-certificate.crt');
-
-// Désactiver la vérification (développement uniquement)
+// Désactiver la vérification du certificat (développement)
 phpCAS::setNoCasServerValidation();
 
-// Forcer l'authentification
-phpCAS::forceAuthentication();
-
-// Récupérer les données de l'utilisateur authentifié
-$user = phpCAS::getUser();
-var_dump($user);
+// Vérifier si l'utilisateur est authentifié
+if (phpCAS::isAuthenticated()) {
+    $_SESSION['cas_user'] = phpCAS::getUser();
+} else {
+    phpCAS::forceAuthentication(); 
+}
 
 ?>
